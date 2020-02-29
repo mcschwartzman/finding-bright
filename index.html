@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <button style="color: red; height: 60px; width: 120px" onclick="flashRed();">Red</button>
+  <br>
+  <button style= "color:orange; height: 60px; width: 120px" onclick="flashYellow();">Yellow</button>
+  <br>
+  <button style="color: green; height: 60px; width: 120px" onclick="flashGreen();">Green</button>
+  <br>
+  <button style="color: black; height: 60px; width: 120px" onclick="off();">Off</button>
+  <br>
+  <button style="color: blue; height: 60px; width: 120px" onclick="crazy();">GO FUCKING CRAZY</button>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+  var access_token="ffe25dd614e68b9a16bbf50d4eae74a126b75cd8"
+
+  function flashRed(){
+    console.log("flashing red");
+
+    $.ajax({
+        type: "POST",
+        url: 'https://api.particle.io/v1/devices/330039001747343432313031/glowCloud?access_token='+ access_token,
+        data: ({ args: "red" }),
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log(err, 'Error occured');
+        }
+    });
+
+  }
+
+  function flashGreen(){
+    console.log("flashing green");
+
+    $.ajax({
+        type: "POST",
+        url: 'https://api.particle.io/v1/devices/330039001747343432313031/glowCloud?access_token='+ access_token,
+        data: ({ args: "green" }),
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log(err, 'Error occured');
+        }
+    });
+
+  }
+
+  function flashYellow(){
+    console.log("flashing yellow");
+
+    $.ajax({
+        type: "POST",
+        url: 'https://api.particle.io/v1/devices/330039001747343432313031/glowCloud?access_token='+ access_token,
+        data: ({ args: "yellow" }),
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log(err, 'Error occured');
+        }
+    });
+
+  }
+
+  function off(){
+    console.log("turning off");
+
+    $.ajax({
+        type: "POST",
+        url: 'https://api.particle.io/v1/devices/330039001747343432313031/glowCloud?access_token='+ access_token,
+        data: ({ args: "off" }),
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log(err, 'Error occured');
+        }
+    });
+
+  }
+
+    function crazy(){
+      console.log("seizure city bitches");
+
+      $.ajax({
+          type: "POST",
+          url: 'https://api.particle.io/v1/devices/330039001747343432313031/glowCloud?access_token='+ access_token,
+          data: ({ args: "crazy" }),
+          dataType: "json",
+          success: function(data) {
+              console.log(data);
+          },
+          error: function(err) {
+              console.log(err, 'Error occured');
+          }
+      });
+
+  }
+
+</script>
